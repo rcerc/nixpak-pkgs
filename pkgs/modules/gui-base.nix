@@ -22,6 +22,12 @@
       };
       bind.rw = [
         [
+          (sloth.concat [ sloth.runtimeDir "/doc/by-app/" config.flatpak.appId])
+          (sloth.concat' sloth.runtimeDir "/doc")
+        ]
+        (sloth.mkdir
+          (sloth.concat [ sloth.runtimeDir "/app/" config.flatpak.appId]))
+        [
           sloth.appCacheDir
           sloth.xdgCacheHome
         ]
@@ -32,7 +38,6 @@
         (sloth.concat' sloth.runtimeDir "/gvfsd")
       ];
       bind.ro = [
-        (sloth.concat' sloth.runtimeDir "/doc")
         (sloth.concat' sloth.xdgConfigHome "/gtk-2.0")
         (sloth.concat' sloth.xdgConfigHome "/gtk-3.0")
         (sloth.concat' sloth.xdgConfigHome "/gtk-4.0")
