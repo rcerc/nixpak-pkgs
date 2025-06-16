@@ -11,7 +11,7 @@
       "org.a11y.Bus" = "talk";
     };
     gpu.enable = lib.mkDefault true;
-    gpu.provider = "bundle";
+    gpu.provider = lib.mkDefault "bundle";
     fonts.enable = true;
     locale.enable = true;
     bubblewrap = {
